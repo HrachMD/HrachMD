@@ -12,7 +12,7 @@ on:
     - cron: "0 3 * * *"
   push:
     branches: [main]
-    paths: [".github/workflows/multiple-stats-cards.yml"]
+    paths: [".github/workflows/stats.yml"]
   workflow_dispatch:
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
         uses: cicirello/user-statistician@v1
         with:
           image-file: images/languages.svg
-          colors: dark
-          hide-keys: general, contributions, repositories
+          colors: dark-dimmed
+          animated-language-chart: true
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
